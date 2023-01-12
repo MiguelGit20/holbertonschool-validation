@@ -1,10 +1,10 @@
 build:
-	hugo --destination ./dist
+	@hugo --destination ./dist
 
 clean:
-	rm -Rf ./dist
+	@rm -Rf ./dist
 
 post:
-	@rm -Rf /content/post/$(POST_NAME).md
-	hugo new post/$(POST_NAME).md
-	sed -i 's+title.*+title: "$(POST_TITLE)"+g' content/post/$(POST_NAME).md
+	@rm -Rf /content/posts/$(POST_NAME).md
+	@hugo new posts/$(POST_NAME).md
+	@sed -i 's+title.*+title: "$(POST_TITLE)"+g' content/posts/$(POST_NAME).md
