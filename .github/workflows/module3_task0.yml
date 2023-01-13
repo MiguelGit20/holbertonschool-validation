@@ -4,7 +4,7 @@ on:
     branhces:
       - main
 jobs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - run: git clone https://github.com/MiguelGit20/holbertonschool-validation.git
       - run: cd module3_task0/
