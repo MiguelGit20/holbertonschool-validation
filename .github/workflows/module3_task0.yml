@@ -1,12 +1,11 @@
 name: Continuous Integration
 on:
   push:
-    branches:
-      - main
+  schedule:
+    - cron: '10 10 * * *'
 jobs:
-  CI:
+  building:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
-      - run: cd module3_task0/
-      - run: make help
+      - uses: actions/checkout@v3
+      - run: cd module3_task0 && make help
