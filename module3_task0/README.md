@@ -12,3 +12,4 @@ post: Create a new blog post whose filename and title come from the environment 
 help: Prints out the list of targets and their usage.
 
 ## Workflow
+Symbolic link to Workflow directory
