@@ -1,0 +1,12 @@
+name: Continuous Integration with GitHub Actions
+on: 
+  push:
+    branhces:
+      - main
+jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git clone https://github.com/MiguelGit20/holbertonschool-validation.git
+      - run: cd module3_task0/
+      - run: make help 
+
