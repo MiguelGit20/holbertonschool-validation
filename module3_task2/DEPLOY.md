@@ -1,20 +1,30 @@
-## Team's FAQ
+# Deploy Documentation
 
-## What is in the archive and how to unarchive it?
+## Zip File
 
-* In the `awesome-website.zip` archive you will encounter the `dist` folder
-* To unarchive it in your current directory use the command line:
-`unzip awesome-website.zip`
+The zip file contain the dist folder and the executable.
+To unarchive it use:
 
-## What are the commands to start and stop the application?
+    unzip awesome-website.zip
 
-* To generate (start) the go-hugo website run the command: `make build`
-* To clean (stop) the go-hugo website run the command: `make clean`
+## Start and Stop application
 
-## How to customize where the application logs are written?
+Create Hugo Website:
 
-## How to “quickly” verify that the application is running (healthcheck)?
+    make build
 
-* To verify that the application is running correctly run the command: `hugo server`
-* Then verify the status of the website in your localhost by clicking the
-`http://localhost:1313/` given by the previous step
+Stop Hugo Website:
+
+    make clean
+
+## Customize logs
+
+You can customize the logs of the app
+
+## Verify that the app is running
+
+You can use
+
+    hugo server
+
+To see if the app is running

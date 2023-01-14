@@ -9,19 +9,17 @@ post:## Create a new blog post whose filename and title come from the environmen
 	@hugo new posts/$(POST_NAME).md
 	@sed -i 's+title.*+title: "$(POST_TITLE)"+g' content/posts/$(POST_NAME).md
 
-package:## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
-	@hugo
-	@zip awesome-website.zip ./dist
+package: build ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
+	zip -r awesome-website.zip dist
 
-lint:## Lint markdown
-	@markdownlint README.md
-	@markdownlint DEPLOY.md
+lint:	## Lint markdown
+	markdownlint README.md DEPLOY.md
 
-unit-tests:## Unit tests
+unit-tests: ## Run unit tests
 
-integration-tests:## Integrations test
+integration-tests: ## Run integrations test
 
-validate:## Validate file
+validate: ## Validate
 
 help:## Prints out the list of targets and their usage.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
