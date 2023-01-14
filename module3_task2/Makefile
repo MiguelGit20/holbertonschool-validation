@@ -9,11 +9,13 @@ post:## Create a new blog post whose filename and title come from the environmen
 	@hugo new posts/$(POST_NAME).md
 	@sed -i 's+title.*+title: "$(POST_TITLE)"+g' content/posts/$(POST_NAME).md
 
-package: build ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
-	zip -r awesome-website.zip dist
+package:## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
+	@hugo
+	@zip awesome-website.zip ./dist
 
 lint:## Lint markdown
-	markdownlint README.md DEPLOY.md
+	@markdownlint README.md
+	@markdownlint DEPLOY.md
 
 unit-tests:## Unit tests
 
