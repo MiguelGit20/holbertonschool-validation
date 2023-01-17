@@ -29,7 +29,7 @@ jobs:
         run: cd module3_task2 && make validate
 
       - name: lint
-        run: cd module3_task2 && npm install -g markdownlint-cli && make lint
+        run: cd module3_task2 && npm install markdownlint --save-dev && make lint
 
       - name: package
         run: cd module3_task2 && make package
