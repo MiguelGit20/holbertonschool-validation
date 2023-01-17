@@ -1,62 +1,35 @@
----
 name: module3_task2
+
 on:
-  schedule:
-    # workflow triggered each day
-    - cron: '30 5 * * *'
   push:
-    # trigger each push event
-    branches:
-      - main
-      - master
+
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
-  module3_task2:
+  package:
     runs-on: ubuntu-18.04
     steps:
-      - name: checkout the repository
-        uses: actions/checkout@v3
-      # Run the setup.sh to install missing tools
-      - name: Setup environment
-        run: |
-          cd module3_task2/
-          sudo ./setup.sh
-      # To use the makefile
-      - name: Build
-        run: |
-          cd module3_task2
-          make build
-      - name: Create post
-        env:
-          POST_NAME: my-post
-          POST_TITLE: My Post
-        run: |
-          cd module3_task2
-          make post
-      - name: markdownlint
-        run: |
-          cd module3_task2
-          make lint
-      - name: clean up the dist
-        run: |
-          cd module3_task2
-          make clean
-      - name: unit-tests
-        run: |
-          cd module3_task2
-          make unit-tests
-      - name: integration-tests
-        run: |
-          cd module3_task2
-          make integration-tests
-          make package
-      - name: validate
-        run: |
-          cd module3_task2
-          make validate
-      - name: archive build
-        if: ${{ success()}}
-        uses: actions/upload-artifact@v3
-        with:
-          name: upload-pakage
-          path: module3_task2/awesome-website.zip
+      - name: cloning
+        uses: actions/checkout@v2
+
+      - name: set_up
+        run: cd module3_task2 && sudo ./setup.sh
+
+      - name: build
+        run: cd module3_task2 && make build
+
+      - name: run unit-tests
+        run: cd module3_task2 && make unit-tests
+
+      - name: run integration-tests
+        run: cd module3_task2 && make integration-tests
+
+      - name: run validate
+        run: cd module3_task2 && make validate
+
+      - name: lint
+        run: cd module3_task2 && npm install -g markdownlint-cli && make lint
+
+      - name: package
+        run: cd module3_task2 && make package
