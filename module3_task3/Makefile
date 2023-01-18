@@ -12,8 +12,8 @@ help: Makefile ## Show this help usage
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 package:
-	hugo
-	zip awesome-website.zip awesome-api dist/ 
+	@hugo
+	@zip awesome-website.zip ./dist
 
 lint:
 	markdownlint "*.md"
