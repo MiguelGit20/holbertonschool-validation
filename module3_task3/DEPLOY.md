@@ -5,6 +5,8 @@
 * How to customize where the application logs are written?
 * How to “quickly” verify that the application is running (healthcheck)?
 
-## TAG
+## Create a release with the archive and content of DEPLOY.md, triggered by a tag
 
-* The work flow is triggered when a tag is push. Then a zip file is created.
+* Create a `GitHub Release` using the
+[“softprops/gh-release” GitHub Action](https://github.com/softprops/action-gh-release)
+named `1.0.0` and pointing to the tag `1.0.0`
