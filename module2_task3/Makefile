@@ -10,7 +10,7 @@ stop: ## Stop the application with the command kill.
 
 clean: ## Delete the binary awesome-api and the log file awesome-api.log.
 	-make stop
-	-rm ./awesome-api awesome.log
+	-rm ./awesome-api awesome.log coverage*
 
 test: ## Testing to ensure that it behaves as expected.
 	curl http://localhost:9999
