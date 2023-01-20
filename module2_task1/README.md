@@ -7,4 +7,5 @@
 * stop:  Stop the application with the command kill.
 * clean:  Delete the binary awesome-api and the log file awesome-api.log.
 * test:  Testing to ensure that it behaves as expected.
+* lint: Lints all the go files using golangci-lint
 * help:  Show commands help.
