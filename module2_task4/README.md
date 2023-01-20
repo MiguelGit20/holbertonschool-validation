@@ -2,15 +2,13 @@
 * On this repo you'll find an introduction site to goHugo.
 
 ## Prerequisites
-* Go and make installed.
+* GoHugo on latest version
+* GNU Make on latest version
 
 ## Lifecycle
-* build:  Compile the source code of the application to a binary named awesome-api.
-* run:  Run the application in background by executing the binary awesome-api.
-* stop:  Stop the application with the command kill.
-* clean:  Delete the binary awesome-api and the log file awesome-api.log.
-* test:  Testing to ensure that it behaves as expected.
-* lint: Lints all the go files using golangci-lint
-* unit-tests: Runs all unit-tests using go test
-* integration-tests: Runs integration test using go test
-* help:  Show commands help.
+* build: Builds a website using gohugo on the dist folder
+* clean: Cleans the dist folder
+* post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME
+* check:   Lints and check for dead links on markdowns using markdownlint-cli and markdown-link-check
+* validate:  Validates dist/index.html using W3C Hbtn validator
+* help: Shows this help
