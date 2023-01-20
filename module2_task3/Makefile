@@ -13,8 +13,8 @@ clean: ## Delete the binary awesome-api and the log file awesome-api.log.
 	-rm ./awesome-api awesome.log coverage*
 
 test: ## Testing to ensure that it behaves as expected.
-	curl http://localhost:9999
-	curl http://localhost:9999/health
+	make unit-tests
+	make integration-tests
 
 lint: ## Lints all the go files using golangci-lint.
 	golangci-lint run
