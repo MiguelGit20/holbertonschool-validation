@@ -1,4 +1,7 @@
-# Make Commands
+# Prerequisites
+* Go and make installed.
+
+## Lifecycle
 * build:  Compile the source code of the application to a binary named awesome-api.
 * run:  Run the application in background by executing the binary awesome-api.
 * stop:  Stop the application with the command kill.
